@@ -2,7 +2,6 @@ const express = require( "express" );
 const router = express.Router();
 const User = require( "../model/user" );
 const verify = require("./verifytoken.js");
-const env = require( "dotenv" );
 const bcrypt = require( "bcryptjs" );
 const jwt = require( "jsonwebtoken" );
 router.post( "/user", async ( req, res ) =>{
