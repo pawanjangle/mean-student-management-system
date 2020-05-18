@@ -8,7 +8,7 @@ const http = require( "http" );
 const path = require ("path");
 const cors = require( "cors" );
 const mongoose = require( "mongoose" );
-mongoose.connect( process.env.MONGO_URI, {useUnifiedTopology: true, useNewUrlParser: true}, (err)=>{
+mongoose.connect( "mongodb+srv://Pawanjangle:adgjmp100@cluster0-sktox.mongodb.net/test?retryWrites=true&w=majority", {useUnifiedTopology: true, useNewUrlParser: true}, (err)=>{
 if( err )
 {
 console.log( "error" )
