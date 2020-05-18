@@ -52,7 +52,8 @@ return res.status( 400 ).send( "Email is wrong" );
 const validPass= await bcrypt.compare( req.body.password, user.password);
 if( !validPass )
 return res.status( 400 ).send( "invalid password" );
-token = await jwt.sign( {_id: user._id} , process.env.TOKEN_SECRET);
+token_secret = "abcd";
+token = await jwt.sign( {_id: user._id} , token_secret);
 res.header("auth-token", token ).send( {token: token} );
 } );
 router.get( "/dashboard", verify, ( req, res ) => {
