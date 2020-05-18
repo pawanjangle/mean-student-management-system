@@ -51,7 +51,7 @@ return res.status( 400 ).send( "Email is wrong" );
 const validPass= await bcrypt.compare( req.body.password, user.password);
 if( !validPass )
 return res.status( 400 ).send( "invalid password" );
-token_secret = "abcd";
+const token_secret = "abcd";
 token = await jwt.sign( {_id: user._id} , token_secret);
 res.header("auth-token", token ).send( {token: token} );
 } );
