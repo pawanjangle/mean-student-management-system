@@ -3017,7 +3017,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(UserService, [{
         key: "createUser",
         value: function createUser(user) {
-          return this.http.post("/api/user/user", user);
+          var httpheaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
+          var options = {
+            headers: httpheaders
+          };
+          return this.http.post("/api/user/user", user, options);
         }
       }, {
         key: "login",

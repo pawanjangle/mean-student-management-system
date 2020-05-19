@@ -55,8 +55,4 @@ const token_secret = "abcd";
 token = await jwt.sign( {_id: user._id} , token_secret);
 res.header("auth-token", token ).send( {token: token} );
 } );
-router.get( "/dashboard", verify, ( req, res ) => {
-res.send( "dashboard")}
-);
-
 module.exports = router;

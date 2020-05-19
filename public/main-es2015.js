@@ -1524,12 +1524,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class UserService {
     constructor(http) {
         this.http = http;
     }
     createUser(user) {
-        return this.http.post("/api/user/user", user);
+        let httpheaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
+        let options = {
+            headers: httpheaders
+        };
+        return this.http.post("/api/user/user", user, options);
     }
     login(user) {
         return this.http.post("/api/user/login", user);
