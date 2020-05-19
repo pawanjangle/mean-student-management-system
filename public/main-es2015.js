@@ -1278,13 +1278,13 @@ class StudentService {
         return this.http.post("/api/student/add-student", student, this.httpOptions);
     }
     getStudent(id) {
-        return this.http.get("/api/student/" + id);
+        return this.http.get("/api/student/" + id, this.httpOptions);
     }
     deleteStudent(id) {
-        return this.http.delete("/api/student/" + id);
+        return this.http.delete("/api/student/" + id, this.httpOptions);
     }
     editStudent(id, data) {
-        return this.http.put("/api/student/" + id, data);
+        return this.http.put("/api/student/" + id, data, this.httpOptions);
     }
 }
 StudentService.ɵfac = function StudentService_Factory(t) { return new (t || StudentService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };

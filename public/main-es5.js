@@ -2528,17 +2528,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getStudent",
         value: function getStudent(id) {
-          return this.http.get("/api/student/" + id);
+          return this.http.get("/api/student/" + id, this.httpOptions);
         }
       }, {
         key: "deleteStudent",
         value: function deleteStudent(id) {
-          return this.http["delete"]("/api/student/" + id);
+          return this.http["delete"]("/api/student/" + id, this.httpOptions);
         }
       }, {
         key: "editStudent",
         value: function editStudent(id, data) {
-          return this.http.put("/api/student/" + id, data);
+          return this.http.put("/api/student/" + id, data, this.httpOptions);
         }
       }]);
 
