@@ -29,7 +29,7 @@ await newStudent.save( ( err ) =>{
  }
  } );
  });
-router.get( "/all-students", verify,
+router.get( "/all-students", verify, 
 async ( req, res ) =>{
 try{
 const students= await Student.find();
@@ -39,7 +39,7 @@ catch( error ){
 res.json( {message:error} );
 }
 });
-router.get("/:studentId",  async ( req, res )=>{
+router.get("/:studentId",  verify, async ( req, res )=>{
 try{
 const student = await Student.findById( req.params.studentId );
 res.json( student )
@@ -48,7 +48,7 @@ catch( error ){
 res.json( {message: error} );
 }
 });
-router.put("/:studentId",  async ( req, res ) =>{
+router.put("/:studentId",  verify, async ( req, res ) =>{
 try{
 const student = {
 first_name: req.body.first_name,
@@ -74,7 +74,7 @@ res.json( {message: error} );
 }
 
 });
-router.delete( "/:studentId", async ( req, res ) =>{
+router.delete( "/:studentId", verify, async ( req, res ) =>{
 try{
 const removeStudent= await Student.findByIdAndDelete(req.params.studentId);
 res.json( removeStudent);
