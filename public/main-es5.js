@@ -3009,18 +3009,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       _createClass(UserService, [{
-        key: "getUsers",
-        value: function getUsers() {
-          return this.http.get("/api/user/user");
-        }
-      }, {
         key: "createUser",
         value: function createUser(user) {
-          var httpheaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json').set("auth-token", localStorage.getItem("token"));
-          var options = {
-            headers: httpheaders
-          };
-          return this.http.post("/api/user/user", user, options);
+          return this.http.post("/api/user/user", user);
         }
       }, {
         key: "login",

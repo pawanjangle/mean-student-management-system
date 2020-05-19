@@ -1521,21 +1521,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 class UserService {
     constructor(http) {
         this.http = http;
     }
-    getUsers() {
-        return this.http.get("/api/user/user");
-    }
     createUser(user) {
-        let httpheaders = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json')
-            .set("auth-token", localStorage.getItem("token"));
-        let options = {
-            headers: httpheaders
-        };
-        return this.http.post("/api/user/user", user, options);
+        return this.http.post("/api/user/user", user);
     }
     login(user) {
         return this.http.post("/api/user/login", user);

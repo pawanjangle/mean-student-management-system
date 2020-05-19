@@ -5,7 +5,7 @@ const verify = require("./verifytoken.js");
 const bcrypt = require( "bcryptjs" );
 const jwt = require( "jsonwebtoken" );
 router.post( "/user", async ( req, res ) =>{
-const emailExist = await User.findOne( {email: req.body.email} );
+const emailExist =  await User.findOne( {email: req.body.email} );
 if( emailExist )
 return res.status( 400 ).send( "email already exist");
 const salt = await bcrypt.genSalt( 10 );
